@@ -1,0 +1,64 @@
+<div class="register-container">
+    
+    <div class="container-content">
+        <div class="container-form">
+            <div class="container-name">
+                <h2>Register</h2>
+            </div>
+
+            <form class="register" [formGroup]="form" (ngSubmit)="register()">
+                <div class="register-fields">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter username" formControlName="username">
+    
+                    <ng-container *ngIf="form.get('username')?.touched">
+                        <p class="error" *ngIf="form.get('username')?.errors?.['required']">Username is required!</p>
+                        <p class="error" *ngIf="form.get('username')?.errors?.['minlength']">Username must be at least 3 characters!</p>
+                    </ng-container>
+                </div>
+    
+                <div class="register-fields">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter email" formControlName="email">
+    
+                    <ng-container *ngIf="form.get('email')?.touched">
+                        <p class="error" *ngIf="form.get('email')?.errors?.['required']">Email is required!</p>
+                        <p class="error" *ngIf="form.get('email')?.errors?.['email']">Email is not valid!</p>
+                    </ng-container>
+                </div>
+    
+                <ng-container formGroupName="passGroup">
+                    <div class="register-fields">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password" formControlName="password">
+        
+                        <!-- this is an optional validation which should be tested -->
+                        <ng-container *ngIf="passGroup?.get('password')?.touched">
+                            <p class="error" *ngIf="passGroup?.get('password')?.errors?.['required']">Password is required!</p>
+                            <p class="error" *ngIf="passGroup?.get('password')?.errors?.['minlength']">Password must be at least 5 characters!</p>
+                        </ng-container>
+                    </div>
+        
+                    <div class="register-fields">
+                        <label for="repeatPassword">Repeat password</label>
+                        <input type="password" name="repeatPassword" id="repeatPassword" placeholder="Repeat password" formControlName="repeatPassword">
+                    </div>
+        
+                    <ng-container *ngIf="passGroup?.get('repeatPassword')?.touched">
+                        <p class="error" *ngIf="passGroup?.errors?.['matchPasswordsValidator'] || passGroup?.get('repeatPassword')?.errors?.['required']">Passwords do not match!</p>
+                    </ng-container>
+                </ng-container>
+    
+                <div class="btns">
+                    <button class="btn">Register</button>
+                </div>
+            </form>
+        </div>
+    
+        <div class="container-info">
+            <h4>LOGIN</h4>
+            <p>Already have profile?</p>
+            <a routerLink="/login">Click here</a>
+        </div>
+    </div>
+</div>
