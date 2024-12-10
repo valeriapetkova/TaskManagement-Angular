@@ -1,0 +1,22 @@
+<div class="site-home">
+    <div class="site-title">
+        <div class="wlc-msg">WELCOME!</div>
+        <p>If you want to organize your work and manage your team tasks - you are at the right place!</p>
+    </div>
+
+    <div *ngIf="!isLoggedIn" class="btns">
+        <p>Join our community</p>
+        <ul>
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/register">Register</a></li>
+        </ul>
+    </div>
+    
+    <div class="benefits-info">
+        <p>Better task management</p>
+        <p>Improve productivity</p>
+        <p>Planning and scheduling</p>
+        <p>Team collaboration</p>
+        <p>Saves time</p>
+    </div>
+</div>

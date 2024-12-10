@@ -1,0 +1,38 @@
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 1em;
+    background-color: rgb(49, 110, 131);
+}
+
+.site-title a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.site-nav ul {
+    display: flex;
+    gap: 1.3em;
+}
+
+.site-nav ul li {
+    list-style: none outside;
+}
+
+.site-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.site-nav ul li a:hover {
+    border: 1px solid white;
+    border-radius: 0.2em;
+    background-color: white;
+    color: rgb(49, 110, 131);
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+}

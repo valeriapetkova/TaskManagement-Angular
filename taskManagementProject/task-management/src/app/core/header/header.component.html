@@ -1,0 +1,25 @@
+<header class="site-header">
+    <div class="site-title">
+        <a routerLink="/home">TestPlatform</a>
+    </div>
+
+    <div *ngIf="!isLoggedIn" class="site-nav">
+        <nav>
+            <ul>
+                <li><a routerLink="/teams">Teams</a></li>
+                <li><a routerLink="/login">Login</a></li>
+                <li><a routerLink="/register">Register</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div *ngIf="isLoggedIn" class="site-nav">
+        <nav>
+            <ul>
+                <li><a routerLink="/teams">Teams</a></li>
+                <li><a routerLink="/my-teams">My teams</a></li>
+                <li><a routerLink="/create">Create team</a></li>
+                <li (click)="logout()"><a>Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
