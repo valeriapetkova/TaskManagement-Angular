@@ -1,0 +1,88 @@
+.site-home {
+    background-color: rgb(97, 167, 190);
+    margin: 1em 0em;
+    max-height: 1000px;
+}
+
+.site-title p {
+    padding: 1em;
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    letter-spacing: 3px;
+    /* padding-top: 2em; */
+    text-align: center;
+}
+
+.wlc-msg {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    letter-spacing: 5px;
+    padding-top: 1.3em;
+}
+
+.benefits-info {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 4em;
+    background-color: white;
+}
+
+.benefits-info p {
+    border: 1px solid white;
+    /* background-color: rgb(224, 152, 58); */
+    background-color: rgb(49, 110, 131);
+    border-radius: 1em;
+    padding: 25px 25px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+.btns {
+    margin-top: 3em;
+    text-align: center;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+
+.btns p {
+    font-size: 25px;
+    background-color: rgb(49, 110, 131);
+    color: white;
+    padding: 8px 20px;
+}
+
+.btns ul {
+    background-color: rgb(49, 110, 131);
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 2.4em;
+    padding: 10px;
+}
+
+.btns ul li {
+    list-style: none outside;
+    border-radius: 8px;
+    padding: 2px 10px;
+    background-color: rgb(97, 167, 190);
+}
+
+.btns ul li:hover {
+    background-color: white;
+}
+
+.btns ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.btns ul li a:hover {
+    color: rgb(49, 110, 131);
+}
