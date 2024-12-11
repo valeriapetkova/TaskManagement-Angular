@@ -1,0 +1,84 @@
+.create-team-container {
+    border: 3px solid rgb(49, 110, 131);
+    border-radius: 2em;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 0.8em;
+}
+
+.container-name {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(49, 110, 131);
+    color: white;
+    margin-top: 0.7em;
+    border-radius: 0.3em;
+    padding: 0.3em;
+}
+
+.container-form {
+    margin: 1.3em;
+    max-width: 450px;
+}
+
+.new-team-title,
+.new-team-owner,
+.new-team-description,
+.new-team-teamKey {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.6em;
+}
+
+.new-team-title label,
+.new-team-owner label,
+.new-team-description label,
+.new-team-teamKey label {
+    font-weight: bold;
+    color: rgb(224, 152, 58);
+}
+
+.new-team-title input,
+.new-team-owner input,
+.new-team-description textarea,
+.new-team-teamKey input {
+    padding: 0.3em;
+}
+
+.new-team-title input,
+.new-team-owner input,
+.new-team-description textarea, 
+.new-team-teamKey input {
+    border-radius: 0.3em;
+    font-size: 17px;
+}
+
+.new-team-title input:hover,
+.new-team-owner input:hover,
+.new-team-description textarea:hover,
+.new-team-teamKey input:hover {
+    border: 2px solid rgb(224, 152, 58);
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(49, 110, 131);
+    border: 1.5px solid rgb(49, 110, 131);
+    border-radius: 1.5em;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(224, 152, 58);
+    border: 1.5px solid rgb(224, 152, 58);
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+}

@@ -1,0 +1,43 @@
+<div class="create-team-container">
+    <div class="container-name">
+        <h2>Create team</h2>
+    </div>
+
+    <div class="container-form">
+        <form #form="ngForm" (ngSubmit)="addTeam(form)">
+            <div class="new-team-title">
+                <label for="teamTitle">Title</label>
+                <input type="text" name="title" id="teamTitle" #inputTeamName="ngModel" ngModel required minlength="3">
+
+                <ng-container *ngIf="inputTeamName.touched">
+                    <p class="error" *ngIf="inputTeamName?.errors?.['required']">Title is required!</p>
+                    <p class="error" *ngIf="inputTeamName?.errors?.['minlength']">Title must be at least 3 characters!</p>
+                </ng-container>
+            </div>
+
+            <div class="new-team-description">
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description" rows="3" #inputDescription="ngModel" ngModel required minlength="10"></textarea>
+
+                <ng-container *ngIf="inputDescription.touched">
+                    <p class="error" *ngIf="inputDescription?.errors?.['required']">Description is required!</p>
+                    <p class="error" *ngIf="inputDescription?.errors?.['minlength']">Description must be at least 10 characters!</p>
+                </ng-container>
+            </div>
+
+            <div class="new-team-teamKey">
+                <label for="key">Team key</label>
+                <input type="text" name="teamKey" id="key" #inputTeamKey="ngModel" ngModel required minlength="6">
+
+                <ng-container *ngIf="inputTeamKey.touched">
+                    <p class="error" *ngIf="inputTeamKey?.errors?.['required']">Team key is required!</p>
+                    <p class="error" *ngIf="inputTeamKey?.errors?.['minlength']">Team key must be at least 6 characters!</p>
+                </ng-container>
+            </div>
+
+            <div class="btns">
+                <button class="btn">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
