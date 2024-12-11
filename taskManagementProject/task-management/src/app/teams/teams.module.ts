@@ -7,10 +7,12 @@ import { TeamsRoutingModule } from "./teams-routing.module";
 import { LastTeamsComponent } from "./last-teams/last-teams.component";
 import { CreateTeamComponent } from "./create-team/create-team.component";
 import { MyTeamsComponent } from "./my-teams/my-teams.component";
+import { TeamsDetailsComponent } from "./teams-details/teams-details.component";
 
 @NgModule({
     declarations: [
         TeamsListComponent, 
+        TeamsDetailsComponent,
         CreateTeamComponent,
         LastTeamsComponent,
         MyTeamsComponent,

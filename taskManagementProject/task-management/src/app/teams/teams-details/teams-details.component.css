@@ -1,0 +1,84 @@
+.team-detail-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.team-detail-content {
+    font-size: 20px;
+    border: 1px solid rgb(97, 167, 190);
+    background-color: rgb(97, 167, 190);
+    /* border-radius: 1.5em; */
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 0.5em;
+    padding: 1.5em;
+}
+
+.team-detail-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 0.6em;
+}
+
+
+.team-detail-info {
+    /* margin-bottom: 0.4em; */
+    text-align: center;
+}
+
+
+.team-detail-info p {
+    margin-bottom: 1em;
+    /* font-weight: bold; */
+    color: rgb(17, 37, 44);
+}
+
+.own-info {
+    /* border: 1px solid white;
+    border-radius: 1em;
+    background-color: white;
+    max-width: 1000px; */
+    font-weight: bold;
+    color: rgb(224, 152, 58); 
+}
+
+.btns {
+    margin-top: 0.6em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    align-content: flex-end;
+    gap: 2em;
+}
+
+.btn-edt,
+.btn-del {
+    width: 100px;
+    height: 43px;
+    margin-top: 0.6em;
+    border: 1px solid white;
+    border-radius: 1.5em;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(17, 37, 44);
+    text-align: center;
+}
+
+.btn-edt:hover,
+.btn-del:hover {
+    cursor: pointer;
+    background-color: rgb(49, 110, 131);
+    color: white;
+}
+
+.btn-edt {
+    background-color: rgb(224, 152, 58); ;
+}
+
+.btn-del {
+    background-color: rgb(224, 152, 58); ;
+}

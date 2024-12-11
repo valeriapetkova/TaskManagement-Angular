@@ -1,0 +1,32 @@
+<div class="team-detail-container">
+    <ng-container *ngIf="!showEditMode">
+        <div class="team-detail-content">
+            <div class="team-detail-title">
+                <h2>{{ team.title }}</h2>
+            </div>
+            
+            <div class="team-detail-info">
+                <p class="own-info">Owner: {{ team.owner }}</p>
+                <p>Description: {{ team.description }}</p>
+            </div>
+    
+            <div *ngIf="isLoggedIn && isOwner(team)" class="btns">
+                <a class="btn-edt" (click)="onToggle()">Edit</a>
+                <a class="btn-del" (click)="delete()">Delete</a>
+            </div>
+
+            <!-- <ng-container *ngIf="isLoggedIn">
+                <app-participants [ownerId]="team._ownerId" />
+            </ng-container> -->
+        </div>
+    </ng-container>
+
+   
+    <!-- <div *ngIf="!showEditMode && (hasJoinedParticipant || isOwner(team))" class="tasks">
+        <app-tasks-list />
+    </div> -->
+
+    <!-- <ng-container *ngIf="showEditMode">
+        <app-team-edit [teamInfo]="team"/>
+    </ng-container> -->
+</div>
