@@ -6,12 +6,11 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    background-color: gray;
+    background-color: rgb(97, 167, 190);
 }
 
 .not-found-content {
     font-size: 70px;
-    background-color: lightblue;
     letter-spacing: 10px;
     color: white;
     font-weight: bold;
