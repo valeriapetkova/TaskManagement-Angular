@@ -1,0 +1,64 @@
+<div class="create-task-container">
+    
+    <div class="container-form">
+        <div class="container-name">
+            <h2>Create task</h2>
+        </div>
+        <form #form="ngForm" (ngSubmit)="addTask(form)" class="all-fields">
+            <div class="new-task-title">
+                <label for="taskTitle">Title</label>
+                <input type="text" name="taskName" id="taskTitle" #inputTaskName="ngModel" ngModel required minlength="3">
+
+                <ng-container *ngIf="inputTaskName.touched">
+                    <p class="error" *ngIf="inputTaskName?.errors?.['required']">Title is required!</p>
+                    <p class="error" *ngIf="inputTaskName?.errors?.['minlength']">Title must be at least 3 characters!</p>
+                </ng-container>
+            </div>
+
+            <div class="new-task-startDate">
+                <label for="startDate">Start date</label>
+                <input type="date" name="startDate" id="startDate" #inputStartDate="ngModel" ngModel required>
+
+                <ng-container *ngIf="inputStartDate.touched">
+                    <p class="error" *ngIf="inputStartDate?.errors?.['required']">Start date is required!</p>
+                </ng-container>
+            </div>
+
+            <div class="new-task-endDate">
+                <label for="endDate">End date</label>
+                <input type="date" name="endDate" id="endDate" #inputEndDate="ngModel" ngModel required>
+
+                <ng-container *ngIf="inputEndDate.touched">
+                    <p class="error" *ngIf="inputEndDate?.errors?.['required']">End date is required!</p>
+                </ng-container>
+            </div>
+
+            <div class="new-task-progress">
+                <label for="progressOption">Progress</label>
+                <select name="progress" id="progressOption" #inputProgress="ngModel" ngModel required>
+                    <option value="To do">To do</option>
+                    <option value="In progress">In progress</option>
+                    <option value="Done">Done</option>
+                </select>
+
+                <ng-container *ngIf="inputProgress.touched">
+                    <p class="error" *ngIf="inputProgress?.errors?.['required']">Progress is required!</p>
+                </ng-container>
+            </div>
+
+            <div class="new-task-description">
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description" rows="1" #inputDescription="ngModel" ngModel required maxlength="60"></textarea>
+
+                <ng-container *ngIf="inputDescription.touched">
+                    <p class="error" *ngIf="inputDescription?.errors?.['required']">Description is required!</p>
+                    <p class="error" *ngIf="inputDescription?.errors?.['maxlength']">Description should not be more than 60 characters long!</p>
+                </ng-container>
+            </div>
+
+            <div class="btns">
+                <button class="btn">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

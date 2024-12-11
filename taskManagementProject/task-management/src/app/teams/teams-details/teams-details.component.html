@@ -22,9 +22,9 @@
     </ng-container>
 
    
-    <!-- <div *ngIf="!showEditMode && (hasJoinedParticipant || isOwner(team))" class="tasks">
+    <div *ngIf="!showEditMode && (hasJoinedParticipant || isOwner(team))" class="tasks">
         <app-tasks-list />
-    </div> -->
+    </div>
 
     <ng-container *ngIf="showEditMode">
         <app-team-edit [teamInfo]="team"/>

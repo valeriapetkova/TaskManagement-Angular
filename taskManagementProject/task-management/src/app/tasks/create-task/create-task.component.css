@@ -1,0 +1,86 @@
+.create-task-container {
+    padding-bottom: 2em;
+}
+
+.container-name {
+    text-align: center;
+    font-size: 13px;
+    color: rgb(224, 152, 58);
+}
+
+.all-fields {
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+    align-items: center;
+    margin: 1.3em;
+    max-width: 450px;
+}
+
+.new-title-title,
+.new-title-startDate,
+.new-title-endDate,
+.new-title-progress,
+.new-task-description {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.6em;
+}
+
+.new-task-title label,
+.new-task-startDate label,
+.new-task-endDate label,
+.new-task-progress label,
+.new-task-description label {
+    font-weight: bold;
+    color: rgb(224, 152, 58);
+}
+
+.new-task-title input,
+.new-task-startDate input,
+.new-task-endDate input,
+.new-task-description textarea,
+.new-task-progress select {
+    padding: 0.3em;
+    width: 150px;
+}
+
+.new-task-title input,
+.new-task-startDate input,
+.new-task-endDate input,
+.new-task-description textarea, 
+.new-task-progress select {
+    border-radius: 0.3em;
+    font-size: 17px;
+}
+
+.new-task-title input:hover,
+.new-task-startDate input:hover,
+.new-task-endDate input:hover,
+.new-task-description textarea:hover,
+.new-task-progress select:hover {
+    border: 2px solid rgb(224, 152, 58);
+    cursor: pointer;
+}
+
+.btn {
+    width: 50px;
+    height: 40px;
+    background-color: rgb(49, 110, 131);
+    border: 1.5px solid rgb(49, 110, 131);
+    border-radius: 1.5em;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(224, 152, 58);
+    border: 1.5px solid rgb(224, 152, 58);
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+}
