@@ -20,6 +20,7 @@ class AppInterceptor implements HttpInterceptor {
     ): Observable<HttpEvent<any>> {
 
         const token = this.userService.user?.accessToken;
+        const isLogged = localStorage.getItem('auth');
 
         if (req.url.startsWith(this.API)) {
             req = req.clone({
@@ -30,6 +31,12 @@ class AppInterceptor implements HttpInterceptor {
         if (token) {
             req = req.clone({
                 headers: req.headers.set('X-Authorization', token),
+            });
+        }
+
+        if (isLogged) {
+            req = req.clone({
+                headers: req.headers.set('X-Authorization', isLogged),
             });
         }
 
