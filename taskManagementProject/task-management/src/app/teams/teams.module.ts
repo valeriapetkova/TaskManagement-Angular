@@ -6,12 +6,14 @@ import { TeamsListComponent } from "./teams-list/teams-list.component";
 import { TeamsRoutingModule } from "./teams-routing.module";
 import { LastTeamsComponent } from "./last-teams/last-teams.component";
 import { CreateTeamComponent } from "./create-team/create-team.component";
+import { MyTeamsComponent } from "./my-teams/my-teams.component";
 
 @NgModule({
     declarations: [
         TeamsListComponent, 
         CreateTeamComponent,
         LastTeamsComponent,
+        MyTeamsComponent,
     ],
     imports: [CommonModule, TeamsRoutingModule, SharedModule, FormsModule, ReactiveFormsModule],
 })
