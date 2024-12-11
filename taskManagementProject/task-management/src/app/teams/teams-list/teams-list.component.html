@@ -1,0 +1,34 @@
+<div class="allTeams">
+    <div *ngIf="!isLoggedIn" class="msg">
+        <p>To see all teams, join other teams, create own teams and manage your tasks you should login or register!</p>
+        <ul>
+            <li>If you have an account <a routerLink="/login">Login here</a></li>
+            <li>If you don't have an account <a routerLink="/register">Register here</a></li>
+        </ul>
+    </div>
+    
+    <div *ngIf="isLoggedIn" class="all-teams">
+        <div class="allTeams-title">
+            <h2>All teams</h2>
+        </div>
+        <div *ngFor="let team of teams" class="teams-container">
+            <div class="team-card">
+                <div class="team-title">
+                    <h2>{{ team.title }}</h2>
+                </div>
+                
+                <div class="team-info">
+                    <p>Owner: {{ team.owner }}</p>
+                </div>
+            
+                <div class="btns">
+                    <a [routerLink]="team._id" class="btn">Details</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    
+    <!-- <div class="lastTeams">
+        <app-last-teams />
+    </div> -->
+</div>

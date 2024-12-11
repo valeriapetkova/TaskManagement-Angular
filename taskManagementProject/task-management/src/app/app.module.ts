@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { UserModule } from './user/user.module';
 import { appInterceptorProvider } from './app.interceptor';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TeamsModule } from './teams/teams.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     SharedModule,
     HttpClientModule,
     UserModule,
+    TeamsModule,
     AppRoutingModule
   ],
   providers: [appInterceptorProvider],
