@@ -1,0 +1,20 @@
+<div class="teams-container">
+    <div class="lastTeams-title">
+        <h2>Last Teams</h2>
+    </div>
+    <div *ngFor="let team of lastTeams" class="lastTeams-container">
+        <div class="team-card">
+            <div class="team-title">
+                    <h2>{{ team.title }}</h2>
+            </div>
+        
+            <div class="team-info">
+                <p>Owner: {{ team.owner }}</p>
+            </div>
+
+            <div *ngIf="isLoggedIn" class="btns">
+                <a [routerLink]="team._id" class="btn">Details</a>
+            </div>
+        </div>
+    </div>
+</div>

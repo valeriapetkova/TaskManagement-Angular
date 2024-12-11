@@ -31,6 +31,10 @@ export class ApiService {
         return this.http.delete<Team>(`/api/data/teams/${teamId}`);
     }
 
+    getLatest() {
+        return this.http.get<Team[]>(`/api/data/teams?sortBy=_createdOn%20desc&offset=0&pageSize=3`);
+    }
+
     getMyTeams(userId: string) {
         const query = `where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`;
         return this.http.get<Team[]>(`/api/data/teams?${query}`);

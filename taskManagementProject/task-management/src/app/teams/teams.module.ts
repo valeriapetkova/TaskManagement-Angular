@@ -4,10 +4,12 @@ import { SharedModule } from "../shared/shared.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { TeamsListComponent } from "./teams-list/teams-list.component";
 import { TeamsRoutingModule } from "./teams-routing.module";
+import { LastTeamsComponent } from "./last-teams/last-teams.component";
 
 @NgModule({
     declarations: [
         TeamsListComponent, 
+        LastTeamsComponent,
     ],
     imports: [CommonModule, TeamsRoutingModule, SharedModule, FormsModule, ReactiveFormsModule],
 })
