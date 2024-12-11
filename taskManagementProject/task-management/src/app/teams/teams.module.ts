@@ -9,6 +9,7 @@ import { CreateTeamComponent } from "./create-team/create-team.component";
 import { MyTeamsComponent } from "./my-teams/my-teams.component";
 import { TeamsDetailsComponent } from "./teams-details/teams-details.component";
 import { TeamEditComponent } from "./team-edit/team-edit.component";
+import { ParticipantsModule } from "../participants/participants.module";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,7 @@ import { TeamEditComponent } from "./team-edit/team-edit.component";
         LastTeamsComponent,
         MyTeamsComponent,
     ],
-    imports: [CommonModule, TeamsRoutingModule, SharedModule, FormsModule, ReactiveFormsModule],
+    imports: [CommonModule, TeamsRoutingModule, SharedModule, FormsModule, ReactiveFormsModule, ParticipantsModule],
 })
 
 export class TeamsModule {}

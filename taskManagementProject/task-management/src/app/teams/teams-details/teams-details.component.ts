@@ -3,6 +3,7 @@ import { Team } from "../../types/team";
 import { ApiService } from "../../api.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { UserService } from "src/app/user/user.service";
+import { ParticipantsService } from "src/app/participants/participants.service";
 
 @Component({
     selector: 'app-teams-details',
@@ -13,14 +14,16 @@ import { UserService } from "src/app/user/user.service";
 export class TeamsDetailsComponent implements OnInit {
     team = {} as Team;
     showEditMode: boolean = false;
-    
 
-    constructor(private api: ApiService, private activeRoute: ActivatedRoute, private userService: UserService, private router: Router) {}
+    constructor(private api: ApiService, private activeRoute: ActivatedRoute, private userService: UserService, private participantsService: ParticipantsService, private router: Router) {}
 
     get isLoggedIn(): boolean {
         return this.userService.isLogged;
     }
 
+    get hasJoinedParticipant(): boolean {
+        return this.participantsService.isJoined;
+    }
 
     get userId(): string {
         return this.userService.user?._id || '';
