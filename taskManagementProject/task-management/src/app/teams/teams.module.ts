@@ -8,12 +8,14 @@ import { LastTeamsComponent } from "./last-teams/last-teams.component";
 import { CreateTeamComponent } from "./create-team/create-team.component";
 import { MyTeamsComponent } from "./my-teams/my-teams.component";
 import { TeamsDetailsComponent } from "./teams-details/teams-details.component";
+import { TeamEditComponent } from "./team-edit/team-edit.component";
 
 @NgModule({
     declarations: [
         TeamsListComponent, 
         TeamsDetailsComponent,
         CreateTeamComponent,
+        TeamEditComponent,
         LastTeamsComponent,
         MyTeamsComponent,
     ],

@@ -1,0 +1,33 @@
+<div class="edit-team-container">
+    <div class="container-name">
+        <h2>Edit team</h2>
+    </div>
+
+    <div class="container-form">
+        <form [formGroup]="form" (ngSubmit)="saveTeamChangesHandler()">
+            <div class="edit-team-title">
+                <label for="teamTitle">Title</label>
+                <input type="text" name="title" id="teamTitle" [value]="teamEdit.title" formControlName="title">
+
+                <ng-container *ngIf="form.get('title')?.touched">
+                    <p class="error" *ngIf="form.get('title')?.errors?.['required']">Title is required!</p>
+                    <p class="error" *ngIf="form.get('title')?.errors?.['minlength']">Title must be at least 3 characters!</p>
+                </ng-container>
+            </div>
+
+            <div class="edit-team-description">
+                <label for="description">Description</label>
+                <textarea type="text" name="description" id="description" rows="3" [value]="teamEdit.description" formControlName="description"></textarea>
+
+                <ng-container *ngIf="form.get('description')?.touched">
+                    <p class="error" *ngIf="form.get('description')?.errors?.['required']">Description is required!</p>
+                    <p class="error" *ngIf="form.get('description')?.errors?.['minlength']">Description must be at least 10 characters!</p>
+                </ng-container>
+            </div>
+
+            <div class="btns">
+                <button class="btn">Edit</button>
+            </div>
+        </form>
+    </div>
+</div>
