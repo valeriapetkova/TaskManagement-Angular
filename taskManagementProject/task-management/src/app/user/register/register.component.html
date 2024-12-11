@@ -31,12 +31,6 @@
                     <div class="register-fields">
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" formControlName="password">
-        
-                        <!-- this is an optional validation which should be tested -->
-                        <ng-container *ngIf="passGroup?.get('password')?.touched">
-                            <p class="error" *ngIf="passGroup?.get('password')?.errors?.['required']">Password is required!</p>
-                            <p class="error" *ngIf="passGroup?.get('password')?.errors?.['minlength']">Password must be at least 5 characters!</p>
-                        </ng-container>
                     </div>
         
                     <div class="register-fields">
