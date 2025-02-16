@@ -25,8 +25,12 @@ export class TasksListComponent implements OnInit {
                 this.tasks = tasks;
             });
         });
+    }
 
-
+    getFilteredTasks(progress: string): void {
+        this.tasksService.getTasksByProgress(progress).subscribe((tasks) => {
+            this.tasks = tasks;
+        });
     }
 
     get teamID(): string {
