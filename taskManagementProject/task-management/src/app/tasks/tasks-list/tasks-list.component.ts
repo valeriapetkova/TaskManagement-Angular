@@ -46,14 +46,14 @@ export class TasksListComponent implements OnInit {
         return isOwnerUser;
     }
 
-    delete(taskId: string) {  
-        this.tasksService.removeTask(taskId).subscribe({
-            next: () => {
-                this.router.navigate([`/teams/${this.teamId}/tasks`]);
-            },
-            error: () => {
-                this.router.navigate(['/error']);
-            },
-        });
-    }
+    // delete(taskId: string) {  
+    //     this.tasksService.removeTask(taskId).subscribe({
+    //         next: () => {
+    //             this.router.navigate([`/teams/${this.teamId}/tasks`]);
+    //         },
+    //         error: () => {
+    //             this.router.navigate(['/error']);
+    //         },
+    //     });
+    // }
 }

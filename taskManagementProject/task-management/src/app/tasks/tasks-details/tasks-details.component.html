@@ -1,0 +1,34 @@
+<div class="task-detail-container">
+    <ng-container *ngIf="!showEditMode">
+        <div class="task-detail-content">
+            <div class="task-detail-title">
+                <h2>{{ task.taskName }}</h2>
+            </div>
+            
+            <div class="task-detail-info">
+                <p class="own-info">Owner: {{ task.email }}</p>
+                <p>Start date: {{ task.startDate | date: "dd.MM.yyyy" }}</p>
+                <p>End date: {{ task.endDate | date: "dd.MM.yyyy" }}</p>
+                <p>Progress: {{ task.progress }}</p>
+                <p>Description: {{ task.description }}</p>
+            </div>
+    
+            <div *ngIf="isLoggedIn && isOwner()" class="btns">
+                <a class="btn-edt" (click)="onToggle()">Edit</a>
+                <a class="btn-del" (click)="onDeleteToggle()">Delete</a>
+            </div>
+        </div>
+    </ng-container>
+
+    <!-- <div *ngIf="!showEditMode" class="comments">
+        <app-comments-list [teamId]="task.teamId"/>
+    </div> -->
+
+    <!-- <ng-container *ngIf="showEditMode">
+        <app-task-edit [taskInfo]="task"/>
+    </ng-container> -->
+
+    <div *ngIf="showDeleteModal && !showEditMode" class="delete-modal-container">
+        <app-delete-modal [itemTitle]="task.taskName" (deleteConfirmation)="onConfirm($event)"/>
+    </div>
+</div>

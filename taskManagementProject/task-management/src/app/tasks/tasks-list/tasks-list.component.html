@@ -6,25 +6,35 @@
         <button (click)="getFilteredTasks('Done')">Done</button>
     </div>
 
-    <div *ngFor="let task of tasks" class="task-container">
-        <div class="task-card">
-            <div class="task-header">
-                <p>{{ task.taskName }}</p>
-                <p>{{ task.email }}</p>
-            </div>
+    <div *ngIf="tasks?.length === 0" class="no-task-msg">
+        <p>There are no tasks yet!</p>
+    </div>
 
-            <div class="task-info">
-                <div class="basic-info">
-                    <p>Start: {{ task.startDate | date: "dd.MM.yyyy"}}</p>
-                    <p>End: {{ task.endDate | date: "dd.MM.yyyy"}}</p>
-                    <p>Progress: {{ task.progress }}</p>
+    <div *ngIf="tasks?.length !== 0" class="all-tasks">
+        <div *ngFor="let task of tasks" class="task-container">
+            <div class="task-card">
+                <div class="task-header">
+                    <p>{{ task.taskName }}</p>
+                    <p>{{ task.email }}</p>
+                </div>
+    
+                <div class="task-info">
+                    <div class="basic-info">
+                        <p>Start: {{ task.startDate | date: "dd.MM.yyyy"}}</p>
+                        <p>End: {{ task.endDate | date: "dd.MM.yyyy"}}</p>
+                        <p>Progress: {{ task.progress }}</p>
+                    </div>
+    
+                    <!-- <p>Description: {{ task.description }}</p> -->
                 </div>
 
-                <p>Description: {{ task.description }}</p>
-            </div>
-        
-            <div *ngIf="isOwner(task._ownerId)" class="btns">
-                <a class="btn-del" (click)="delete(task._id)">Delete</a>
+                <!-- <div class="task-detail-info">
+                    <a [routerLink]="task._id" class="btn">Details</a>
+                </div> -->
+            
+                <!-- <div *ngIf="isOwner(task._ownerId)" class="btns">
+                    <a class="btn-del" (click)="delete(task._id)">Delete</a>
+                </div> -->
             </div>
         </div>
     </div>
@@ -35,6 +45,5 @@
         </ng-container>
         
         <a class="btn-create" (click)="onCreate()">Create a new task</a>
-
     </div>
 </div>
