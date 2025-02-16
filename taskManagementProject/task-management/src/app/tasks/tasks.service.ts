@@ -41,4 +41,8 @@ export class TasksService {
         return this.http.get<Task[]>(`/api/data/tasks?${query}`);
     }
 
+    getTasksByProgress(progress: string) {
+        const query = `where=progress LIKE "${progress}"`;
+        return this.http.get<Task[]>(`/api/data/tasks?${query}`);
+    }
 }
