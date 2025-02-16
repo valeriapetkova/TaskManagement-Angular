@@ -8,6 +8,19 @@
     </div>
     
     <div *ngIf="isLoggedIn" class="all-teams">
+        <div class="search-container">
+            <div class="container-form">
+                <form class="form" #form="ngForm" (ngSubmit)="searchText(form)">
+                    <div class="search-input">
+                        <input type="text" name="searchTeam" id="teamName" placeholder="Enter team name" #inputSearchTeam="ngModel" ngModel>
+                    </div>
+        
+                    <div class="btns">
+                        <button class="search-btn">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="allTeams-title">
             <h2>All teams</h2>
         </div>

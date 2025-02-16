@@ -39,4 +39,9 @@ export class ApiService {
         const query = `where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`;
         return this.http.get<Team[]>(`/api/data/teams?${query}`);
     }
+
+    getSearchTeam(searchTeam: string) {
+        const query = `where=title LIKE "${searchTeam}"`;
+        return this.http.get<Team[]>(`/api/data/teams?${query}`);
+    }
 }
