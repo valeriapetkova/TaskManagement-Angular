@@ -15,8 +15,8 @@
 
             <div class="task-info">
                 <div class="basic-info">
-                    <p>Start: {{ task.startDate }}</p>
-                    <p>End: {{ task.endDate }}</p>
+                    <p>Start: {{ task.startDate | date: "dd.MM.yyyy"}}</p>
+                    <p>End: {{ task.endDate | date: "dd.MM.yyyy"}}</p>
                     <p>Progress: {{ task.progress }}</p>
                 </div>
 
