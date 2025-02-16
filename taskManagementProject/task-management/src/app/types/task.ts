@@ -10,3 +10,13 @@ export interface Task {
     _createdOn: number;
     _id: string;
 }
+
+export interface TaskChanges {
+    taskName: string;
+    startDate: string;
+    endDate: string;
+    progress: string;
+    description: string;
+    email: string;
+    teamId: string;
+}
