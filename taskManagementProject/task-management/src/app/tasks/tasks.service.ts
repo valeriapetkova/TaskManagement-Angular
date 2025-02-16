@@ -20,6 +20,10 @@ export class TasksService {
         return this.http.get<Task[]>(`/api/data/tasks?${query}`);
     }
 
+    getTask(taskId: string) {
+        return this.http.get<Task>(`/api/data/tasks/${taskId}`);
+    }
+
     createTask(teamId: string, taskName: string, startDate: string, endDate: string, progress: string, description: string, email: string) {
         return this.http.post<Task>(`/api/data/tasks`, { teamId, taskName, startDate, endDate, progress, description, email });
     }
