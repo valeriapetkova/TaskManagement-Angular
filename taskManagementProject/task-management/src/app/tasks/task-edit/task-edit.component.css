@@ -1,0 +1,87 @@
+.edit-task-container {
+    border: 3px solid rgb(49, 110, 131);
+    border-radius: 2em;
+    min-width: 500px;
+    margin: 0 auto;
+    margin-top: 0.8em;
+}
+
+.container-name {
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(49, 110, 131);
+    color: white;
+    margin-top: 0.7em;
+    border-radius: 0.3em;
+    padding: 0.3em;
+}
+
+.container-form {
+    margin: 1.3em;
+    max-width: 450px;
+}
+
+.edit-task-title,
+.edit-task-startDate,
+.edit-task-endDate,
+.edit-task-progress,
+.edit-task-description {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.6em;
+}
+
+.edit-task-title label,
+.edit-task-startDate label,
+.edit-task-endDate label,
+.edit-task-progress label,
+.edit-task-description label {
+    font-weight: bold;
+}
+
+.edit-task-title input,
+.edit-task-startDate input,
+.edit-task-endDate input,
+.edit-task-progress select {
+    padding: 0.3em;
+}
+
+.edit-task-title input,
+.edit-task-startDate input,
+.edit-task-endDate input,
+.edit-task-progress select,
+.edit-task-description textarea {
+    border-radius: 0.3em;
+    font-size: 17px;
+}
+
+.edit-task-title input:hover,
+.edit-task-startDate input:hover,
+.edit-task-endDate input:hover,
+.edit-task-progress select:hover,
+.edit-task-description textarea:hover {
+    border: 4px solid rgb(224, 152, 58);
+    cursor: pointer;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(49, 110, 131);
+    border: 1.5px solid rgb(49, 110, 131);
+    border-radius: 1.5em;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(224, 152, 58);
+    border: 1.5px solid rgb(224, 152, 58);
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+}

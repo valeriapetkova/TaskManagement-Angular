@@ -7,9 +7,10 @@ import { TasksDetailsComponent } from "./tasks-details/tasks-details.component";
 import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
 import { TasksRoutingModule } from "./tasks-routing.module";
+import { TaskEditComponent } from "./task-edit/task-edit.component";
 
 @NgModule({
-    declarations: [TasksListComponent, CreateTaskComponent, TasksDetailsComponent],
+    declarations: [TasksListComponent, CreateTaskComponent, TasksDetailsComponent, TaskEditComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, SharedModule, TasksRoutingModule],
     exports: [TasksListComponent],
 })

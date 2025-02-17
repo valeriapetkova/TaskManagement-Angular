@@ -24,9 +24,9 @@
         <app-comments-list [teamId]="task.teamId"/>
     </div> -->
 
-    <!-- <ng-container *ngIf="showEditMode">
+    <ng-container *ngIf="showEditMode">
         <app-task-edit [taskInfo]="task"/>
-    </ng-container> -->
+    </ng-container>
 
     <div *ngIf="showDeleteModal && !showEditMode" class="delete-modal-container">
         <app-delete-modal [itemTitle]="task.taskName" (deleteConfirmation)="onConfirm($event)"/>
