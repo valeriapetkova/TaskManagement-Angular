@@ -3,11 +3,12 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { SharedModule } from "../shared/shared.module";
 import { CreateCommentComponent } from "./create-comment/create-comment.component";
+import { CommentsListComponent } from "./comments-list/comments-list.component";
 
 @NgModule({
-    declarations: [CreateCommentComponent],
+    declarations: [CommentsListComponent, CreateCommentComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule, SharedModule],
-    exports: [],
+    exports: [CommentsListComponent],
 })
 
 export class CommentsModule {}

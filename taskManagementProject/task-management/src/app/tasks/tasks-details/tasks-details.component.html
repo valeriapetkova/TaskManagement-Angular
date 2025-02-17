@@ -20,9 +20,9 @@
         </div>
     </ng-container>
 
-    <!-- <div *ngIf="!showEditMode" class="comments">
+    <div *ngIf="!showEditMode" class="comments">
         <app-comments-list [teamId]="task.teamId"/>
-    </div> -->
+    </div>
 
     <ng-container *ngIf="showEditMode">
         <app-task-edit [taskInfo]="task"/>

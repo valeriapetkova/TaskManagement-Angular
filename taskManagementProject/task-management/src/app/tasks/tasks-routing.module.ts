@@ -9,7 +9,7 @@ const routes: Routes = [
     { path: 'teams/:teamId/:taskId', component: TasksDetailsComponent},
     { path: 'my-tasks', component: MyTasksComponent},
     { path: ':taskId/comments-create', component: TasksDetailsComponent },
-
+    { path: ':taskId/comments', component: TasksDetailsComponent },
 ];
 
 @NgModule({

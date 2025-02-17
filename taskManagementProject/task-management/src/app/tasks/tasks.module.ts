@@ -9,10 +9,11 @@ import { SharedModule } from "../shared/shared.module";
 import { TasksRoutingModule } from "./tasks-routing.module";
 import { TaskEditComponent } from "./task-edit/task-edit.component";
 import { MyTasksComponent } from "./my-tasks/my-tasks.component";
+import { CommentsModule } from "../comments/comments.module";
 
 @NgModule({
     declarations: [TasksListComponent, CreateTaskComponent, TasksDetailsComponent, TaskEditComponent, MyTasksComponent],
-    imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, SharedModule, TasksRoutingModule],
+    imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, SharedModule, TasksRoutingModule, CommentsModule],
     exports: [TasksListComponent],
 })
 

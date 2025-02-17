@@ -1,0 +1,14 @@
+.title {
+    padding: 1.5em;
+    color: rgb(32, 72, 85);
+    text-align: center;
+}
+
+.comments-container {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0.8em;
+}
