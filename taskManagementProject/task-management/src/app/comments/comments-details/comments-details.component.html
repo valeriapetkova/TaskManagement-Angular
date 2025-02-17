@@ -17,12 +17,11 @@
         </div>
     </ng-container>
     
-    <!-- <ng-container *ngIf="showEditMode">
+    <ng-container *ngIf="showEditMode">
         <app-comment-edit [commentInfo]="commentInfo"/>
-    </ng-container> -->
+    </ng-container>
 
     <div *ngIf="showDeleteModal && !showEditMode" class="delete-modal-container">
         <app-delete-modal [itemTitle]="'this comment'" (deleteConfirmation)="onConfirm($event)"/>
     </div>
-
 </div>

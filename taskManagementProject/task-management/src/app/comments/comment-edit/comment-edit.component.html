@@ -1,0 +1,24 @@
+<div class="create-comment-container">
+    <div class="comment-content">
+        <div class="container-name">
+            <h2>Edit comment</h2>
+        </div>
+    
+        <div class="container-form">
+            <form [formGroup]="form" (ngSubmit)="saveCommentChangesHandler()">
+                <div class="new-comment-title">
+                    <textarea type="text" name="text" id="comment" rows="3" [value]="commentEdit.text" formControlName="text"></textarea>
+    
+                    <ng-container *ngIf="form.get('text')?.touched">
+                        <p class="error" *ngIf="form.get('text')?.errors?.['required']">Comment is required!</p>
+                        <p class="error" *ngIf="form.get('text')?.errors?.['maxlength']">Comment should not be more than 60 characters long!</p>
+                    </ng-container>
+                </div>
+    
+                <div class="btns">
+                    <button class="btn">Edit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
