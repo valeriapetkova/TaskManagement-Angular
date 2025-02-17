@@ -3,6 +3,7 @@ import { UserService } from "src/app/user/user.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Participant } from "src/app/types/participant";
 import { ParticipantsService } from "../participants.service";
+import { NgForm } from "@angular/forms";
 
 @Component({
     selector: 'app-participants',
@@ -13,7 +14,10 @@ import { ParticipantsService } from "../participants.service";
 export class ParticipantsComponent implements OnInit {
     participants: Participant[] | null = [];
     teamId: string = '';
+    errorMsg: string = '';
+    showJoinModal: boolean = false;
     @Input() ownerId: string = '';
+    @Input() teamKey: string = '';
 
     
     constructor(private participantsService: ParticipantsService, private activeRoute: ActivatedRoute, private userService: UserService, private router: Router) {}
@@ -51,15 +55,29 @@ export class ParticipantsComponent implements OnInit {
             return true;
         }
     }
+
+    onToggle(): void {
+        this.showJoinModal = !this.showJoinModal;
+    }
+
+    joinTeamHandler(form: NgForm) {
+        if (form.invalid) {
+            return;
+        }
         
-    join() {
-        this.participantsService.create(this.teamId, this.userService.user?.email).subscribe({
-            next: () => {
-                this.router.navigate([`/teams/${this.teamId}/joined`]);
-            },
-            error: () => {
-                this.router.navigate(['/error']);
-            },
-        })
+        const { key } = form.value;
+        
+        if (this.teamKey === key) {
+            this.participantsService.create(this.teamId, this.userService.user?.email).subscribe({
+                next: () => {
+                    this.router.navigate([`/teams/${this.teamId}/joined`]);
+                },
+                error: () => {
+                    this.router.navigate(['/error']);
+                },
+            });
+        } else {
+           this.errorMsg = 'Not valid team key! Please try again!';
+        }
     }
 }

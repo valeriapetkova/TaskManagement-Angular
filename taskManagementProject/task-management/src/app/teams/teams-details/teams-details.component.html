@@ -16,7 +16,7 @@
             </div>
 
             <ng-container *ngIf="isLoggedIn">
-                <app-participants [ownerId]="team._ownerId" />
+                <app-participants [ownerId]="team._ownerId" [teamKey]="team.teamKey" />
             </ng-container>
         </div>
     </ng-container>

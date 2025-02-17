@@ -1,9 +1,7 @@
 <div class="participants-container">
-    <!-- <p>Participants: {{ participants?.length }}</p> -->
-
     <ng-container *ngIf="!hasOwner()">
         <div *ngIf="!joined" class="btns">
-            <a class="btn-jn" (click)="join()">Join</a>
+            <button class="btn-jn" (click)="onToggle()">Join</button>
         </div>
         <div *ngIf="joined" class="text">
             <p class="txt-jn">You are a team member!</p>
@@ -17,3 +15,37 @@
         </div>
     </ng-container>
 </div>
+
+<ng-container *ngIf="showJoinModal">
+     <div class="join-modal-container">
+    
+         <div class="join-modal-content">
+            <div class="join-modal-header">
+                <p>Add team key</p>
+                <button class="close-btn" (click)="onToggle()">X</button>
+            </div>
+
+            <div class="join-modal-input">
+                <p class="join-info">To join this team you have to enter the unique team key! You should receive this key from the owner of the team!</p>
+                <form #form="ngForm" (ngSubmit)="joinTeamHandler(form)">
+                    <div class="add-team-key">
+                        <input type="text" name="key" id="teamKey" placeholder="Enter the team key" #inputTeamKey="ngModel" ngModel required minlength="6">
+        
+                        <ng-container *ngIf="inputTeamKey.touched">
+                            <p class="error" *ngIf="inputTeamKey?.errors?.['required']">Team key is required!</p>
+                            <p class="error" *ngIf="inputTeamKey?.errors?.['maxlength']">Team key should be at least 6 characters long!</p>
+                        </ng-container>
+                    </div>
+    
+                    <div *ngIf="errorMsg !== ''" class="error-msg">
+                        {{ errorMsg }}
+                    </div>
+    
+                    <div class="btns">
+                        <button class="btn">Join</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+     </div>
+</ng-container>
