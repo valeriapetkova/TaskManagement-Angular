@@ -8,6 +8,7 @@ import { MyTasksComponent } from "./my-tasks/my-tasks.component";
 const routes: Routes = [
     { path: 'teams/:teamId/:taskId', component: TasksDetailsComponent},
     { path: 'my-tasks', component: MyTasksComponent},
+    { path: ':taskId/comments-create', component: TasksDetailsComponent },
 
 ];
 

@@ -1,0 +1,23 @@
+<div class="create-comment-container">
+    
+    <div class="container-form">
+        <div class="container-name">
+            <h2>Create comment</h2>
+        </div>
+        <form #form="ngForm" (ngSubmit)="addComment(form)" class="fields">
+            <div class="new-comment">
+                <label for="comment">Comment</label>
+                <textarea type="text" name="text" id="comment" rows="3" #inputComment="ngModel" ngModel required maxlength="60"></textarea>
+
+                <ng-container *ngIf="inputComment.touched">
+                    <p class="error" *ngIf="inputComment?.errors?.['required']">Comment is required!</p>
+                    <p class="error" *ngIf="inputComment?.errors?.['maxlength']">Comment should not be more than 60 characters long!</p>
+                </ng-container>
+            </div>
+
+            <div class="btns">
+                <button class="btn">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

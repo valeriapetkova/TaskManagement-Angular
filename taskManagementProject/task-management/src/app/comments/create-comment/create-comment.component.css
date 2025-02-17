@@ -1,0 +1,63 @@
+.create-comment-container {
+    padding-bottom: 2em;
+}
+
+.container-name {
+    text-align: center;
+    font-size: 13px;
+    color: rgb(224, 152, 58);
+}
+
+.fields {
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+    align-items: center;
+    margin: 1.3em;
+    max-width: 450px;
+}
+
+.new-comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.6em;
+}
+
+.new-comment label {
+    font-weight: bold;
+    color: rgb(224, 152, 58);
+}
+
+.new-comment textarea {
+    padding: 0.3em;
+    width: 150px;
+    border-radius: 0.3em;
+    font-size: 17px;
+}
+
+.new-comment textarea:hover {
+    border: 2px solid rgb(224, 152, 58);
+    cursor: pointer;
+}
+
+.btn {
+    width: 50px;
+    height: 40px;
+    background-color: rgb(49, 110, 131);
+    border: 1.5px solid rgb(49, 110, 131);
+    border-radius: 1.5em;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(224, 152, 58);
+    border: 1.5px solid rgb(224, 152, 58);
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+}
