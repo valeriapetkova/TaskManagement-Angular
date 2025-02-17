@@ -1,0 +1,28 @@
+<div class="tasks-container">
+    <div *ngIf="tasks?.length === 0" class="no-task-msg">
+        <p>There are no tasks yet!</p>
+    </div>
+
+    <div *ngIf="tasks?.length !== 0" class="my-class">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Start date</th>
+                    <th scope="col">End date</th>
+                    <th scope="col">Progress</th>
+                    <th scope="col">Owner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of tasks">
+                    <a [routerLink] = "['/teams', task.teamId, task._id]"><th scope="row">{{ task.taskName }}</th></a>
+                    <td>{{ task.startDate | date: "dd.MM.yyyy" }}</td>
+                    <td>{{ task.endDate | date: "dd.MM.yyyy" }}</td>
+                    <td>{{ task.progress }}</td>
+                    <td>{{ task.email }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

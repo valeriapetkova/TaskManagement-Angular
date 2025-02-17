@@ -8,9 +8,10 @@ import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
 import { TasksRoutingModule } from "./tasks-routing.module";
 import { TaskEditComponent } from "./task-edit/task-edit.component";
+import { MyTasksComponent } from "./my-tasks/my-tasks.component";
 
 @NgModule({
-    declarations: [TasksListComponent, CreateTaskComponent, TasksDetailsComponent, TaskEditComponent],
+    declarations: [TasksListComponent, CreateTaskComponent, TasksDetailsComponent, TaskEditComponent, MyTasksComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, SharedModule, TasksRoutingModule],
     exports: [TasksListComponent],
 })

@@ -1,0 +1,16 @@
+table {
+    border: 2px solid lightblue;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+thead {
+    background-color: lightblue;
+}
+
+th, 
+td {
+    border: 1px solid lightblue;
+    padding: 5px 10px;
+    text-align: center;
+}
