@@ -1,5 +1,5 @@
 .title {
-    padding: 1.5em;
+    padding: 0.6em;
     color: rgb(32, 72, 85);
     text-align: center;
 }
@@ -11,4 +11,20 @@
     flex-direction: column;
     justify-content: center;
     margin: 0.8em;
+}
+
+.btn-create {
+    border: 1px solid rgb(224, 152, 58);
+    border-radius: 0.5em;
+    padding: 5px 10px;
+    color: rgb(224, 152, 58);
+    font-weight: bold;
+}
+
+.create-btn a:hover {
+    border: 1px solid rgb(49, 110, 131);
+    background-color: rgb(49, 110, 131);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }

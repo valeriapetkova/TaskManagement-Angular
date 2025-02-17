@@ -1,0 +1,28 @@
+<div class="comments-details-container">
+    <ng-container *ngIf="!showEditMode"> 
+        <div class="comment-card">
+            <div class="comment-header">
+                <p>{{ commentInfo.email }}</p>
+                <div *ngIf="isLoggedIn && isOwner(commentInfo._ownerId)" class="btns">
+                    <a class="btn-del" (click)="onDeleteToggle()">Delete</a>
+                    <a class="btn-edt" (click)="onToggle()">Edit</a>
+                </div>
+            </div>
+            
+            <div class="comment-info">
+                <div class="basic-info">
+                    <p>{{ commentInfo.text }}</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    
+    <!-- <ng-container *ngIf="showEditMode">
+        <app-comment-edit [commentInfo]="commentInfo"/>
+    </ng-container> -->
+
+    <div *ngIf="showDeleteModal && !showEditMode" class="delete-modal-container">
+        <app-delete-modal [itemTitle]="'this comment'" (deleteConfirmation)="onConfirm($event)"/>
+    </div>
+
+</div>

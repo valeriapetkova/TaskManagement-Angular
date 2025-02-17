@@ -1,0 +1,39 @@
+.comment-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(49, 110, 131);
+    border-radius: 1em;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em;
+    font-size: 16px;
+}
+
+.comment-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20em;
+    background-color: rgb(49, 110, 131);
+    border-radius: 0.6em;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0.3em;
+}
+
+.btns {
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 0.4em;
+    font-weight: normal;
+}
+
+.btn-del:hover,
+.btn-edt:hover {
+    color: rgb(224, 152, 58);
+    cursor: pointer;
+}
