@@ -1,3 +1,8 @@
 <div class="error">
-    <p class="err-message">{{ errorMsg }}</p>
+    <div class="error-content">
+      <p class="err-message">{{ errorMsg }}</p>
+      <div class="btn">
+        <button (click)="clearError()">OK</button>
+      </div>
+    </div>
 </div>

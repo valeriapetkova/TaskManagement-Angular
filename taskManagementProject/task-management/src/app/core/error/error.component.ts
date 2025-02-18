@@ -17,4 +17,8 @@ export class ErrorComponent implements OnInit {
             this.errorMsg = err?.error.message || '';
         });
     }
+
+    clearError(): void {
+        this.errorService.removeError();
+    }
 }
