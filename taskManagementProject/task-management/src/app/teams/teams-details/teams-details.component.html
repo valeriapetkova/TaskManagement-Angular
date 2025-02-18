@@ -12,7 +12,7 @@
     
             <div *ngIf="isLoggedIn && isOwner(team)" class="btns">
                 <a class="btn-edt" (click)="onToggle()">Edit</a>
-                <a class="btn-del" (click)="delete()">Delete</a>
+                <a class="btn-del" (click)="onDeleteToggle()">Delete</a>
             </div>
 
             <ng-container *ngIf="isLoggedIn">
@@ -29,4 +29,8 @@
     <ng-container *ngIf="showEditMode">
         <app-team-edit [teamInfo]="team"/>
     </ng-container>
+
+    <div *ngIf="showDeleteModal && !showEditMode" class="delete-modal-container">
+        <app-delete-modal [itemTitle]="team.title" (deleteConfirmation)="onConfirm($event)"/>
+    </div>
 </div>

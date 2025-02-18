@@ -14,6 +14,7 @@ import { ParticipantsService } from "src/app/participants/participants.service";
 export class TeamsDetailsComponent implements OnInit {
     team = {} as Team;
     showEditMode: boolean = false;
+    showDeleteModal: boolean = false;
 
     constructor(private api: ApiService, private activeRoute: ActivatedRoute, private userService: UserService, private participantsService: ParticipantsService, private router: Router) {}
 
@@ -43,19 +44,27 @@ export class TeamsDetailsComponent implements OnInit {
         this.showEditMode = !this.showEditMode;
     }
 
+    onDeleteToggle(): void {
+        this.showDeleteModal = !this.showDeleteModal;
+    }
+
     isOwner(team: Team) {
         const isOwnerUser = this.team._ownerId === this.userService.user?._id;
         return isOwnerUser;
     }
 
-    delete() {
-        this.api.deleteTeam(this.team._id).subscribe({
-            next: () => {
-                this.router.navigate(['/teams']);
-            },
-            error: () => {
-                this.router.navigate(['/error']);
-            },
-        });
+    onConfirm(action: string): void {
+        if (action === 'delete') {
+            this.api.deleteTeam(this.team._id).subscribe({
+                next: () => {
+                    this.router.navigate(['/teams']);
+                },
+                error: () => {
+                    this.router.navigate(['/error']);
+                },
+            });
+        } else if (action === 'cancel') {
+            this.onDeleteToggle();
+        }
     }
 }
