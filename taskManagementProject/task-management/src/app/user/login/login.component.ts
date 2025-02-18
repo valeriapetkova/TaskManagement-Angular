@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { UserService } from "../user.service";
 import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
+import { ErrorService } from "src/app/core/error/error.service";
 
 @Component({
     selector: 'app-login',
@@ -10,7 +11,11 @@ import { NgForm } from "@angular/forms";
 })
 
 export class LoginComponent {
-    constructor(private userService: UserService, private router: Router) {}
+    constructor(private userService: UserService, private errorService: ErrorService, private router: Router) {}
+
+    get hasErrorMsg(): boolean {
+        return this.errorService.hasError;
+    }
 
     login(form: NgForm) {
         if (form.invalid) {

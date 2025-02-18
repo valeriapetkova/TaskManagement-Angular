@@ -46,7 +46,6 @@ class AppInterceptor implements HttpInterceptor {
                     this.router.navigate(['/home']);
                 } else {
                     this.errorService.setError(err);
-                    this.router.navigate(['/error']);
                 }
 
                 return [err];
