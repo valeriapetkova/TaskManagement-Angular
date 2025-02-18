@@ -45,19 +45,4 @@ export class CommentsListComponent implements OnInit {
         const isOwnerUser = ownerId === this.userService.user?._id;
         return isOwnerUser;
     }
-
-    delete(commentId: string) { 
-        this.commentsService.removeComment(commentId).subscribe({
-            next: () => {
-                this.router.navigate([`/${this.taskId}/comments`]);
-            },
-            error: () => {
-                this.router.navigate(['/error']);
-            },
-        });
-
-        this.commentsService.getComments(this.taskId).subscribe(() => {
-            this.router.navigate([`teams/${this.teamId}/${this.taskId}`]);
-    });
-    }
 }
