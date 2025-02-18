@@ -21,25 +21,33 @@
                 </form>
             </div>
         </div>
+
         <div class="allTeams-title">
             <h2>All teams</h2>
         </div>
-        <div *ngFor="let team of teams" class="teams-container">
-            <div class="team-card">
-                <div class="team-title">
-                    <h2>{{ team.title }}</h2>
-                </div>
+
+        <div *ngIf="teams?.length === 0" class="no-team-msg">
+            <p>There are no teams yet!</p>
+        </div>
+
+        <div *ngIf="teams?.length !== 0" class="teams">
+            <div *ngFor="let team of teams" class="teams-container">
+                <div class="team-card">
+                    <div class="team-title">
+                        <h2>{{ team.title }}</h2>
+                    </div>
+                    
+                    <div class="team-info">
+                        <p>Owner: {{ team.owner }}</p>
+                    </div>
                 
-                <div class="team-info">
-                    <p>Owner: {{ team.owner }}</p>
-                </div>
-            
-                <div class="btns">
-                    <a [routerLink]="team._id" class="btn">Details</a>
+                    <div class="btns">
+                        <a [routerLink]="team._id" class="btn">Details</a>
+                    </div>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     
     <div class="lastTeams">
         <app-last-teams />

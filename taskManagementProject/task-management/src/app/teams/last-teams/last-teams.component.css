@@ -9,6 +9,12 @@
     padding-bottom: 5em;
 }
 
+.teams {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
 .lastTeams-title {
     letter-spacing: 2px;
     color: rgb(32, 72, 85);
