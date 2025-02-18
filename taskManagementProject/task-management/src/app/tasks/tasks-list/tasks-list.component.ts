@@ -45,15 +45,4 @@ export class TasksListComponent implements OnInit {
         const isOwnerUser = ownerId === this.userService.user?._id;
         return isOwnerUser;
     }
-
-    // delete(taskId: string) {  
-    //     this.tasksService.removeTask(taskId).subscribe({
-    //         next: () => {
-    //             this.router.navigate([`/teams/${this.teamId}/tasks`]);
-    //         },
-    //         error: () => {
-    //             this.router.navigate(['/error']);
-    //         },
-    //     });
-    // }
 }
